@@ -14,6 +14,40 @@ public class CardDeck
 		randSrc = new Random();
 	}
 	
+	public void add(Card target) {
+		cardList.add(target);
+		if(!cardMap.containsKey(target.name))
+			cardMap.put(target.name, target);
+		else {
+			Card tempC = cardMap.get(target.name);
+			while(tempC.next!=null)
+				tempC = tempC.next;
+			tempC.next = target;
+		}
+	}
+	
+	public void insert(Card target, int loc) {
+		if(loc>=cardList.size())
+			cardList.add(target);
+		else
+			cardList.add(loc, target);
+		if(!cardMap.containsKey(target.name))
+			cardMap.put(target.name, target);
+		else {
+			Card tempC = cardMap.get(target.name);
+			while(tempC.next!=null)
+				tempC = tempC.next;
+			tempC.next = target;
+		}
+	}
+	
+	public Card drawTop() {
+		
+	}
+	
+	public Card drawSpec(String name) {
+		
+	}
 	
 	public void shuffle() {
 		if(cardList.size()<=1)
