@@ -1,0 +1,4 @@
+2015-4-25:
+-> define encounter cards and add encounter card decks to locations
+-> define in GM a way to read and initialize cards from a given input file
+-> test the above 
