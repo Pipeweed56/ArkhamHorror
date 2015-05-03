@@ -2,27 +2,31 @@ public class Monster extends Card
 {
 	int combatMod, horrorMod;
 	int lifeDamage, sanityDamage;
-	int toughness;
-	// Sign determines movement
+	int toughness, awareness;
+	// Sign determines movement (0-moon,1-hexagon)
 	int sign;
-	// Monster type: 0 for normal; 1 for stationary; 2 for flying; 3 for fast
-	int type;
+	// Movement type: 0 for normal; 1 for stationary; 2 for flying; 3 for fast
+	int movement;
+	// Ability
+	String[] abilities;
 	
-	String victoryEffect;
-	String defeatEffect;
+	String[] victoryEffects;
+	String[] defeatEffects;
 	
-	public Monster(String pName, int cMod, int hMod, int lDam, int sDam, int tough,
-			int pSign, int pType, String vEffect, String dEffect) {
+	public Monster(String pName, int cMod, int hMod, int lDam, int sDam, int tough, int aware,
+			int pSign, int pMove, String[] vEffects, String[] dEffects, String[] pAbilities) {
 		name = pName;
 		combatMod = cMod;
 		horrorMod = hMod;
 		lifeDamage = lDam;
 		sanityDamage = sDam;
 		toughness = tough;
+		awareness = aware;
 		sign = pSign;
-		type = pType;
+		movement = pMove;
 		
-		victoryEffect = vEffect;
-		defeatEffect = dEffect;
+		victoryEffects = vEffects;
+		defeatEffects = dEffects;
+		abilities = pAbilities;
 	}
 }

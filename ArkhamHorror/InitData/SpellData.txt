@@ -1,0 +1,30 @@
+// name,number,hand,sanity cost,cast modifier
+// description
+// types
+// use effects
+entry
+Bind Monster,2,2,2,4
+na
+spell
+discard,passCombat-beatToughness-nonBoss
+entryEnd
+//
+entry
+Enchant Weapon,0,1,0
+na
+spell
+exhaust,makeMagical
+entryEnd
+//
+Find Gate,4,0,1,-1
+na
+spell
+movementOnly,returnToEarth
+entryEnd
+//
+Mists of Releh,4,0,0,0
+na
+spell
+exhaust,passEvade-beatAwareness
+entryEnd
+//

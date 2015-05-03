@@ -1,0 +1,8 @@
+// name
+// description
+// hold effect
+// use effect
+Duke
+A trusty dog
+increaseSanity,1
+healSanity,max

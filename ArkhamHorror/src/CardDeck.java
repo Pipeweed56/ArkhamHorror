@@ -6,11 +6,13 @@ public class CardDeck<T extends Card>
 {
 	ArrayList<T> cardList;
 	HashMap<String, T> cardMap;
+	ArrayList<T> cardPile;
 	Random randSrc;
 	
 	public CardDeck(Random pRandSrc) {
 		cardList = new ArrayList<T>();
 		cardMap = new HashMap<String, T>();
+		cardPile = new ArrayList<T>();
 		randSrc = pRandSrc;
 	}
 	
@@ -85,6 +87,10 @@ public class CardDeck<T extends Card>
 		return cardList.get(0);
 	}
 	
+	public void returnCard(T target) {
+		cardPile.add(target);
+	}
+	
 	public void shuffle() {
 		if(cardList.size()<=1)
 			return;
@@ -98,5 +104,27 @@ public class CardDeck<T extends Card>
 			cardList.set(tempI, cardList.get(n));
 			cardList.set(n, tempC);
 		}		
+	}
+	
+	// Mix cards from both list and pile, and shuffle
+	public void shuffleAll() {
+		T target;
+		while(cardPile.size()>0) {
+			target = cardPile.remove(0);
+			cardList.add(target);
+			if(!cardMap.containsKey(target.name))
+				cardMap.put(target.name, target);
+			else {
+				Card tempC = cardMap.get(target.name);
+				while(tempC.next!=null)
+					tempC = tempC.next;
+				tempC.next = target;
+			}
+		}
+		shuffle();
+	}
+	
+	public int size() {
+		return cardList.size();
 	}
 }

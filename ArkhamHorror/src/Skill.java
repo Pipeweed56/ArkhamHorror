@@ -2,7 +2,7 @@
 
 public class Skill extends Item
 {
-	public Skill(String[] hEffects, String[] uEffects, String[] rEffects) {
-		super(hEffects, uEffects, rEffects);
+	public Skill(String[] hEffects, String[] eEffects, String[] uEffects, String[] rEffects) {
+		super(hEffects, eEffects, uEffects, rEffects);
 	}
 }

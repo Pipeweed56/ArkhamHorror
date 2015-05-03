@@ -1,0 +1,24 @@
+Section - Monsters
+// name, count
+// sign(0-moon,1-hexagon), movement(0 for normal; 1 for stationary; 2 for flying; 3 for fast)
+// combatMod, horrorMod, lifeDamage, sanityDamage, toughness, awareness;
+// abilities;
+// victoryEffects;
+// defeatEffects;
+entry
+Cultist,6
+0,0
+1,none,1,0,1,-3
+
+
+
+entryEnd
+//
+entry
+Ghoul,3
+1,0
+-1,0,1,1,1-3
+
+
+ambush
+entryEnd

@@ -3,39 +3,52 @@ import java.util.HashMap;
 public class Investigator extends Card
 {
 	int money;
-	int maxHealth, maxSanity;
-	int health, sanity;
+	int maxStamina, maxSanity;
+	int stamina, sanity;
 	int movePoint;
 	int focus;
 	int hand;
 	int clue;
 	String startLoc;
 	
+	// Some status variables
+	boolean isBlessed;
+	boolean hasRetainer;
+	boolean isPolice;
+	boolean isLodgeMember;
+	
 	int[][] speed_sneak, fight_will, lore_luck;	
 	
 	HashMap<String, CommonItem> commonList;
-	HashMap<String, RareItem> rareList;
+	HashMap<String, UniqueItem> uniqueList;
 	HashMap<String, Spell> spellList;
 	HashMap<String, Skill> skillList;
 	HashMap<String, Ally> allyList;
 	HashMap<String, Monster> monsterTrophy;
 	HashMap<String, Gate> gateTrophy;
 	HashMap<String, Integer> effectList;
+	HashMap<String, Object[]> actionList;
 	
-	public Investigator(String pName, int iMoney, int pMH, int pMS,	int pFocus, 
+	public Investigator(String pName, int iMoney, int pMSta, int pMSan,	int pFocus, 
 			int sSpeed, int sSneak, int sFight, int sWill, int sLore, int sLuck,
-			int pClue, String sLoc) {
+			int pClue, String sLoc, boolean pIsBlessed, boolean pHasRetainer,
+			boolean pIsPolice, boolean pIsLodgeMember) {
 		name = pName;
 		money = iMoney;
-		maxHealth = pMH;
-		maxSanity = pMS;
-		health = maxHealth;
+		maxStamina = pMSta;
+		maxSanity = pMSan;
+		stamina = maxStamina;
 		sanity = maxSanity;
 		focus = pFocus;
 		clue = pClue;
 		startLoc = sLoc;
 		
 		hand = 2;
+		
+		isBlessed = pIsBlessed;
+		hasRetainer = pHasRetainer;
+		isPolice = pIsPolice;
+		isLodgeMember = pIsLodgeMember;
 		
 		speed_sneak = new int[2][4];
 		fight_will = new int[2][4];
@@ -50,12 +63,13 @@ public class Investigator extends Card
 		}
 		
 		commonList = new HashMap<String, CommonItem>();
-		rareList = new HashMap<String, RareItem>();
+		uniqueList = new HashMap<String, UniqueItem>();
 		spellList = new HashMap<String, Spell>();
 		skillList = new HashMap<String, Skill>();
 		allyList = new HashMap<String, Ally>();
 		monsterTrophy = new HashMap<String, Monster>();
 		gateTrophy = new HashMap<String, Gate>();
 		effectList = new HashMap<String, Integer>();
+		actionList = new HashMap<String, Object[]>();
 	}
 }

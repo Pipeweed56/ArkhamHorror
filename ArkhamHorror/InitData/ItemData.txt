@@ -1,0 +1,117 @@
+// name,number,money,hand
+// Description
+// types
+// hold effect
+// equip effect
+// use effect
+// refresh effect
+entry
+.38 Revolver,2,4,1
+na
+common,physical
+
+modifyCombatCheck,3
+
+
+entryEnd
+//
+entry
+Cross,2,3,1
+na
+common,magical
+horror,1
+modifyCombatCheck-undead,3
+
+
+entryEnd
+//
+entry
+Food,2,1,0
+na
+common
+
+
+discard,counterSanLoss,1
+
+entryEnd
+//
+entry
+Dynamite,2,4,2
+na
+common,physical
+
+
+combatOnly,discard,modifyCombatCheck,8
+
+entryEnd
+//
+entry
+Map of Arkham,2,2,0
+na
+common
+
+
+movementOnly,exhaust,increaseMove,1
+
+entryEnd
+//
+entry
+Research Material,2,1,0
+na
+common
+
+
+discard,counterClueSpend,1
+
+entryEnd
+//
+entry
+Alien Statue,1,5,0
+na
+unique
+
+
+movementOnly,exhaust,spendMove,2,spendSanity,1,rollDice,success,drawSpell,1,or,getToken,3,failure,loseStamina,3
+
+entryEnd
+//
+entry
+Blue Watcher of the Pyramid,1,4,0
+na
+unique
+
+
+discard,loseSanity,2,passCombat-nonBoss,passFightCloseGate,passLoreCloseGate
+
+entryEnd
+//
+entry
+Eldar Sign,4,5,0
+na
+unique
+
+
+discard,loseStamina,1,loseSanity,1,passSealGate,decreaseDoom,1
+
+entryEnd
+//
+entry
+Gate Box,1,4,0
+na
+unique
+returnAnyGate
+
+
+
+entryEnd
+//
+entry
+Necronomicon,1,6,0
+na
+unique,tome
+
+
+movementOnly,exhaust,spendMove,2,makeLoreCheck,-2,success,drawSpell,1,and,loseSanity,2,failure
+
+
+entryEnd

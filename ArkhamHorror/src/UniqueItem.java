@@ -1,10 +1,10 @@
 
-public class CommonItem extends Item
+public class UniqueItem extends Item
 {
 	int money;
 	int hand;
 	
-	public CommonItem(int pMoney, int pHand, String[] pTypes,
+	public UniqueItem(int pMoney, int pHand, String[] pTypes,
 			String[] hEffects, String[] eEffects, String[] uEffects, String[] rEffects) {
 		super(hEffects, eEffects, uEffects, rEffects);
 		types = pTypes;
